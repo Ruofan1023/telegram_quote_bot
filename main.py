@@ -1,6 +1,4 @@
-from random import random
-
-from telegram import InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineQueryResultArticle, InputTextMessageContent
 
 import constants as keys
 from telegram.ext import *
