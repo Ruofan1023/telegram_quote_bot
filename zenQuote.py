@@ -1,5 +1,4 @@
 import requests
-import json
 
 zen_quote_url = "https://zenquotes.io/api/random"
 
