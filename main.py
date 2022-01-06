@@ -14,8 +14,6 @@ from time import sleep
 
 api_key = os.environ['API_KEY']
 chat_id = os.environ['CHAT_ID']
-# api_key = "5048383719:AAHb9yhpp1wTEcrG-JWg_eL18M4HQw3shuM"
-# chat_id = 1132574244
 bot = Bot(api_key)
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
