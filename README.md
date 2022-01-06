@@ -4,9 +4,10 @@ A simple quote bot that gives inspirations, accessible at `@Nafours_Quote_Bot` o
 ## Features
 ### `\zen` 
 #### Get an inspirational quote with a simple command!
-![zen command](assets/images/zenCommand.jpg)
+<img src="assets/images/zenCommand.jpg" alt="zen command" width="200"/>
 
 ### Inline mode `@Nafours_Quote_Bot`
 #### Inline mode allows you to share a random quote with another user
-![inline mode](assets/images/inlineMode.jpg)
+<img src="assets/images/inlineMode.jpg" alt="inline mode" width="200"/>
+
 
