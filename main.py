@@ -1,4 +1,5 @@
 from telegram import InlineQueryResultArticle, InputTextMessageContent
+from telegram.error import Conflict
 from telegram.ext import *
 import zenQuote as zenQuote
 import logging
@@ -48,8 +49,10 @@ def main():
     dp.add_handler(CommandHandler("zen", zen_quote_command))
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     dp.add_handler(InlineQueryHandler(inline_randome_zen_quote))
-    updater.start_polling()
-    updater.idle()
-
+    try:
+        updater.start_polling()
+        updater.idle()
+    except Conflict:
+        quit()
 
 main()
