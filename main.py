@@ -41,18 +41,16 @@ def inline_randome_zen_quote(update, context):
 
 
 def main():
-    api_key = os.environ['API_KEY']
-    updater = Updater(api_key, use_context=True)
+    updater = Updater('5048383719:AAGodRcenQaFHOOjLKmc0JeIPIkEzoTzLiw', use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start_command))
     dp.add_handler(CommandHandler("zen", zen_quote_command))
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     dp.add_handler(InlineQueryHandler(inline_randome_zen_quote))
-    try:
-        updater.start_polling()
-        updater.idle()
-    except Conflict:
-        quit()
+
+    updater.start_polling()
+
+
 
 main()
