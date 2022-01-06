@@ -52,6 +52,5 @@ def main():
     updater.start_polling()
     updater.idle()
 
+
 main()
-
-
