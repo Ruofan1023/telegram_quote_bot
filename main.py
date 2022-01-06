@@ -40,18 +40,17 @@ def inline_randome_zen_quote(update, context):
     context.bot.answer_inline_query(update.inline_query.id, results)
 
 
-def main():
-    api_key = os.environ['API_KEY']
-    updater = Updater(api_key, use_context=True)
-    dp = updater.dispatcher
+api_key = os.environ['API_KEY']
+updater = Updater('api_key', use_context=True)
+dp = updater.dispatcher
 
-    dp.add_handler(CommandHandler("start", start_command))
-    dp.add_handler(CommandHandler("zen", zen_quote_command))
-    dp.add_handler(MessageHandler(Filters.text, handle_message))
-    dp.add_handler(InlineQueryHandler(inline_randome_zen_quote))
+dp.add_handler(CommandHandler("start", start_command))
+dp.add_handler(CommandHandler("zen", zen_quote_command))
+dp.add_handler(MessageHandler(Filters.text, handle_message))
+dp.add_handler(InlineQueryHandler(inline_randome_zen_quote))
 
-    updater.start_polling()
-    updater.idle()
+updater.start_polling()
+updater.idle()
 
 
 
