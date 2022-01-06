@@ -1,9 +1,9 @@
 from telegram import InlineQueryResultArticle, InputTextMessageContent
-
-import constants as keys
+from telegram.error import Conflict
 from telegram.ext import *
 import zenQuote as zenQuote
 import logging
+import os
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -41,7 +41,8 @@ def inline_randome_zen_quote(update, context):
 
 
 def main():
-    updater = Updater(keys.API_KEY, use_context=True)
+    api_key = os.environ['API_KEY']
+    updater = Updater(api_key, use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start_command))
